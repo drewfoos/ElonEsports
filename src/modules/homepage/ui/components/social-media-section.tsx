@@ -28,7 +28,7 @@ const instagramPosts = [
   "https://www.instagram.com/p/DHeAhIGsyrP/",
   "https://www.instagram.com/p/DH2Btq_yAsz/",
   "https://www.instagram.com/p/DF8f36XsmjY/",
-  "https://www.instagram.com/p/DGGlGGUPJ_x/",
+  "https://www.instagram.com/p/DF61m1hBfje/",
   "https://www.instagram.com/p/DGuCp7bMzMt/",
   "https://www.instagram.com/p/DGdgZOJxWc1/"
 ];
