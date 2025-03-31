@@ -71,7 +71,13 @@ export function Footer() {
               className="border-elon-maroon text-elon-maroon hover:bg-elon-maroon/5"
               asChild
             >
-              <Link href="/join">Join The Team</Link>
+              <a 
+                    href="https://discord.gg/W7BfUNd"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Join the Team
+                  </a>
             </Button>
           </div>
 
