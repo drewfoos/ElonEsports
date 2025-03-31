@@ -29,10 +29,7 @@ export function Footer() {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Teams", path: "/teams" },
-    { name: "Players", path: "/players" },
-    { name: "Matches", path: "/matches" },
     { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
   ];
   
   const socialLinks = [
@@ -100,32 +97,18 @@ export function Footer() {
             <h3 className="font-bold text-gray-900 mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <Link 
-                  href="/schedule"
-                  className="text-gray-600 hover:text-elon-maroon transition-colors"
-                >
-                  Match Schedule
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/news"
-                  className="text-gray-600 hover:text-elon-maroon transition-colors"
-                >
-                  News & Announcements
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/gallery"
-                  className="text-gray-600 hover:text-elon-maroon transition-colors"
-                >
-                  Photo Gallery
-                </Link>
+                <a 
+                    href="https://elon.campuslabs.com/engage/organization/esports"
+                    className="text-gray-600 hover:text-elon-maroon transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Phoenix Connect
+                  </a>
               </li>
               <li>
                 <a 
-                  href="https://www.elon.edu/u/academics/communications/esports/"
+                  href="https://www.elon.edu/u/academics/communications/about-the-school/elon-esports/"
                   className="text-gray-600 hover:text-elon-maroon transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"

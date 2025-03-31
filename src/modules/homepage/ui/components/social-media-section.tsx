@@ -104,7 +104,7 @@ function InstagramCard({ url }: { url: string }) {
 
 export function SocialMediaSection() {
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white pb-24">
       <Container>
         {/* Section Header */}
         <div className="mb-12 text-center">

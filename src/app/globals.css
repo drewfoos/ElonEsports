@@ -60,16 +60,20 @@
 /* Custom class for hex color values */
 .text-elon-maroon {
   color: #73000a;
+  mix-blend-mode: normal;
 }
 
 .bg-elon-maroon {
   background-color: #73000a;
+  mix-blend-mode: normal;
 }
 
 .text-elon-gold {
   color: #b59a57;
+  mix-blend-mode: normal;
 }
 
 .bg-elon-gold {
   background-color: #b59a57;
+  mix-blend-mode: normal;
 }

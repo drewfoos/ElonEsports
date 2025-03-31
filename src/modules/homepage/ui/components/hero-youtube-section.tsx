@@ -128,7 +128,7 @@ export function HeroYouTubeSection({
       <div className="relative z-20 flex flex-col items-center justify-center min-h-screen text-center px-4 py-16 md:py-0">
         <div className="animate-fade-in-up max-w-4xl w-full">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tighter mb-3 md:mb-4 text-white">
-            ELON <span className="text-elon-gold">ESPORTS</span>
+            <span className="text-elon-maroon">ELON </span><span className="text-elon-gold">ESPORTS</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-6 md:mb-8">
             Compete. Connect. Conquer.

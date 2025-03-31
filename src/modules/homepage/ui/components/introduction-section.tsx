@@ -1,8 +1,6 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { Gamepad2, Users, Trophy, Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import Link from "next/link";
 import { Container } from "@/components/container"; // Add this import
 
 export function IntroSection() {
@@ -10,7 +8,7 @@ export function IntroSection() {
     <section className="bg-white py-24">
       {/* Hero section with angled design */}
       <Container>
-        <div className="relative mb-20 pb-8">
+        <div className="relative mb-6 pb-8">
           {/* Accent line */}
           <div className="absolute top-0 left-0 h-1 w-24 bg-elon-gold"></div>
           
@@ -24,7 +22,7 @@ export function IntroSection() {
           <h1 className="mb-6 text-5xl font-extrabold tracking-tight md:text-6xl">
             <span className="text-elon-maroon">ELON</span>{" "}
             <span className="bg-gradient-to-r from-elon-gold to-amber-500 bg-clip-text text-transparent">
-              ESPORTS
+              EEEESPORTS
             </span>
           </h1>
           
@@ -84,38 +82,6 @@ export function IntroSection() {
               </p>
             </CardContent>
           </Card>
-        </div>
-        
-        {/* CTA Section */}
-        <div className="mt-16 flex flex-col items-center justify-center">
-          <div className="mb-8 h-0.5 w-48 bg-gradient-to-r from-transparent via-elon-gold to-transparent"></div>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-elon-maroon hover:bg-elon-maroon/90 text-white font-bold shadow-md"
-              type="button"
-              asChild
-            >
-              <a 
-                href="https://elon.campuslabs.com/engage/organization/esports" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                Phoenix Connect
-              </a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-elon-gold text-elon-gold hover:bg-elon-gold/5"
-              type="button"
-              asChild
-            >
-              <Link href="/about">
-                LEARN MORE
-              </Link>
-            </Button>
-          </div>
         </div>
       </Container>
     </section>
