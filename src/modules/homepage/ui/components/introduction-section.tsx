@@ -3,12 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Gamepad2, Users, Trophy, Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
+import { Container } from "@/components/container"; // Add this import
 
 export function IntroSection() {
   return (
     <section className="bg-white py-24">
       {/* Hero section with angled design */}
-      <div className="container mx-auto px-6">
+      <Container>
         <div className="relative mb-20 pb-8">
           {/* Accent line */}
           <div className="absolute top-0 left-0 h-1 w-24 bg-elon-gold"></div>
@@ -19,8 +20,8 @@ export function IntroSection() {
             LEVEL UP YOUR COLLEGE EXPERIENCE
           </div>
           
-{/* Main heading with gradient effect */}
-<h1 className="mb-6 text-5xl font-extrabold tracking-tight md:text-6xl">
+          {/* Main heading with gradient effect */}
+          <h1 className="mb-6 text-5xl font-extrabold tracking-tight md:text-6xl">
             <span className="text-elon-maroon">ELON</span>{" "}
             <span className="bg-gradient-to-r from-elon-gold to-amber-500 bg-clip-text text-transparent">
               ESPORTS
@@ -116,7 +117,7 @@ export function IntroSection() {
             </Button>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

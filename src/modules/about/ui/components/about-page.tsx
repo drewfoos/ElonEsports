@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 // Import simple-icons with lowercase imports
 import {
@@ -11,12 +10,11 @@ import {
 } from "simple-icons";
 
 // Import Lucide icons
-import { ExternalLink, Users, Calendar, AlertTriangle, MessageSquare, Info } from "lucide-react";
+import { ExternalLink, Users, Calendar, AlertTriangle, MessageSquare } from "lucide-react";
 
 // Import shadcn components
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 

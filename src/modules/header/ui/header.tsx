@@ -1,6 +1,5 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
@@ -16,6 +15,7 @@ import {
 // Add our custom SheetContent that supports hideCloseButton
 import { SheetContent } from "./components/sheet-custom"
 import Image from "next/image"
+import { Container } from "@/components/container" // Import the Container
 
 // Navigation items abstracted to avoid repetition
 const navigationItems = [
@@ -47,7 +47,7 @@ export function Header() {
         "w-full h-16 transition-all duration-300",
         headerBackgroundClass
       )}>
-        <div className="h-full container mx-auto px-6 flex items-center justify-between">
+        <Container className="h-full flex items-center justify-between">
           {/* Logo with ElonEsports text - clickable to home */}
           <Link href="/" className="flex items-center gap-2 cursor-pointer">
             <Image 
@@ -146,7 +146,7 @@ export function Header() {
               </SheetContent>
             </Sheet>
           </div>
-        </div>
+        </Container>
       </div>
     </header>
   )

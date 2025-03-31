@@ -1,12 +1,23 @@
-import React from "react"
-import { cn } from "@/lib/utils"
+// components/ui/container.tsx
+import React from "react";
+import { cn } from "@/lib/utils";
 
-interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+  fluid?: boolean;
+}
 
-export function Container({ className, ...props }: ContainerProps) {
+export function Container({ 
+  className, 
+  fluid = false,
+  ...props 
+}: ContainerProps) {
   return (
-    <div 
-      className={cn("container mx-auto px-4 md:px-6", className)}
+    <div
+      className={cn(
+        "mx-auto px-6", 
+        !fluid && "container",
+        className
+      )}
       {...props}
     />
   )
