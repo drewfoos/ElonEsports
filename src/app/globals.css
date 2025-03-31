@@ -1,26 +1,75 @@
+/* app/globals.css */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+
+
+@theme {
+  /* Elon Phoenix Colors */
+  --color-maroon: oklch(0.346 0.209 25);
+  --color-gold: oklch(0.697 0.089 84);
+  
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  
+  /* Using Elon Phoenix Maroon as primary */
+  --primary: var(--color-maroon);
+  --primary-foreground: oklch(0.985 0 0);
+  
+  /* Using Elon Phoenix Gold as secondary */
+  --secondary: var(--color-gold);
+  --secondary-foreground: oklch(0.145 0 0);
+  
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: var(--color-gold);
+  --accent-foreground: oklch(0.145 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: var(--color-maroon);
+  --radius: 0.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.326 0.189 25);  /* Darker maroon */
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.677 0.079 84);  /* Darker gold */
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.677 0.079 84);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.326 0.189 25);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Custom class for hex color values */
+.text-elon-maroon {
+  color: #73000a;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.bg-elon-maroon {
+  background-color: #73000a;
+}
+
+.text-elon-gold {
+  color: #b59a57;
+}
+
+.bg-elon-gold {
+  background-color: #b59a57;
 }
