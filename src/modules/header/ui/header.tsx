@@ -27,23 +27,7 @@ const navigationItems = [
 ]
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
-  const [mounted, setMounted] = useState(false)
-
-  // Check if we're at the top of the page
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   // Solid white header with border bottom
   const headerBackgroundClass = "bg-white border-b border-gray-200";

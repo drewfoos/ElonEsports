@@ -1,6 +1,5 @@
 "use client"
-
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, ReactElement } from "react";
 
 // TypeScript declaration for the Twitch object that gets added to window
 declare global {
@@ -19,14 +18,27 @@ declare global {
           muted?: boolean;
           time?: string;
         }
-      ) => {
-        addEventListener: (event: string, callback: Function) => void;
-        removeEventListener: (event: string, callback: Function) => void;
-        getPlayer: () => any;
-        destroy: () => void;
-      };
+      ) => TwitchEmbed;
     };
   }
+}
+
+// Define a type for the Twitch embed
+interface TwitchEmbed {
+  addEventListener: (event: string, callback: (data?: unknown) => void) => void;
+  removeEventListener: (event: string, callback: (data?: unknown) => void) => void;
+  getPlayer: () => TwitchPlayer;
+  destroy: () => void;
+}
+
+// Define a type for the Twitch player
+interface TwitchPlayer {
+  play: () => void;
+  pause: () => void;
+  setVolume: (volume: number) => void;
+  getMuted: () => boolean;
+  setMuted: (muted: boolean) => void;
+  // Add other methods as needed
 }
 
 // Define TypeScript interface for props
@@ -38,34 +50,34 @@ interface TwitchEmbedProps {
   muted?: boolean;
 }
 
-export function TwitchEmbed({ 
-  channel, 
-  width = "100%", 
-  height = 400, 
+export function TwitchEmbed({
+  channel,
+  width = "100%",
+  height = 400,
   autoplay = true,
   muted = false
-}: TwitchEmbedProps) {
+}: TwitchEmbedProps): ReactElement {
   const [isLoaded, setIsLoaded] = useState(false);
-  const embedRef = useRef<any>(null);
-  
+  const embedRef = useRef<TwitchEmbed | null>(null);
+ 
   // Use a static ID that won't change between renders
   const embedId = `twitch-embed-${channel.replace(/[^a-zA-Z0-9]/g, '')}`;
-
+  
   useEffect(() => {
     // We need to check if we're in the browser
     if (typeof window === 'undefined') {
       return;
     }
-    
+   
     // Function to load the Twitch embed script
-    const loadScript = () => {
+    const loadScript = (): Promise<void> => {
       return new Promise<void>((resolve) => {
         // Check if script is already loaded
         if (window.Twitch) {
           resolve();
           return;
         }
-        
+       
         const script = document.createElement("script");
         script.id = 'twitch-embed-script';
         script.src = "https://embed.twitch.tv/embed/v1.js";
@@ -74,22 +86,22 @@ export function TwitchEmbed({
         document.body.appendChild(script);
       });
     };
-    
+   
     // Create the embed after the script is loaded
-    const createEmbed = async () => {
+    const createEmbed = async (): Promise<void> => {
       try {
         await loadScript();
-        
+       
         // Small delay to ensure DOM is ready
         setTimeout(() => {
           const embedElement = document.getElementById(embedId);
-          
+         
           if (window.Twitch && embedElement) {
             // Cleanup previous instance if it exists
             if (embedRef.current) {
               embedRef.current.destroy();
             }
-            
+           
             // Create new embed
             embedRef.current = new window.Twitch.Embed(embedId, {
               width,
@@ -100,7 +112,7 @@ export function TwitchEmbed({
               // Use current hostname as parent
               parent: [window.location.hostname]
             });
-            
+           
             setIsLoaded(true);
           } else {
             console.error("Twitch API not available or element not found");
@@ -110,10 +122,12 @@ export function TwitchEmbed({
         console.error("Error creating Twitch embed:", error);
       }
     };
-
+    
     // Initialize the embed
-    createEmbed();
-
+    createEmbed().catch((error) => {
+      console.error("Failed to create Twitch embed:", error);
+    });
+    
     // Cleanup function
     return () => {
       // Destroy embed instance
@@ -123,10 +137,10 @@ export function TwitchEmbed({
       }
     };
   }, [channel, width, height, autoplay, muted, embedId]);
-
+  
   return (
     <div className="twitch-embed-container">
-      <div 
+      <div
         id={embedId}
         className="w-full h-full"
       >

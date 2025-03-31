@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export function TermsOfServicePage() {
   return (
     <div className="container mx-auto px-6 py-12 max-w-4xl">
-      <h1 className="text-3xl md:text-4xl font-bold mb-6 text-elon-maroon">Terms of Service</h1>
+      <h1 className="text-3xl md:text-4xl font-bold mb-6 text-elon-maroon mt-12">Terms of Service</h1>
       
       <div className="prose prose-lg max-w-none">
         <p className="text-gray-600 mb-8">
@@ -25,7 +25,7 @@ export function TermsOfServicePage() {
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-900">2. Club Membership</h2>
           <p className="mb-4">
-            Elon Esports is a student-run organization at Elon University. Membership is primarily open to current Elon University students. Members must adhere to Elon University's Student Conduct Code as well as the specific rules established by Elon Esports.
+            Elon Esports is a student-run organization at Elon University. Membership is primarily open to current Elon University students. Members must adhere to Elon University&apos;s Student Conduct Code as well as the specific rules established by Elon Esports.
           </p>
           <p>
             Membership in specific competitive teams may be subject to tryouts, skill evaluations, and ongoing participation requirements as determined by team captains and club leadership.
@@ -56,7 +56,7 @@ export function TermsOfServicePage() {
           <ul className="list-disc pl-6 mb-4 space-y-2">
             <li>Use our website in any way that violates applicable laws or regulations</li>
             <li>Attempt to gain unauthorized access to any part of our website or systems</li>
-            <li>Engage in any activity that disrupts or interferes with our website's functioning</li>
+            <li>Engage in any activity that disrupts or interferes with our website&apos;s functioning</li>
             <li>Collect or harvest user data without permission</li>
             <li>Upload or transmit viruses or malicious code</li>
           </ul>
@@ -111,19 +111,6 @@ export function TermsOfServicePage() {
           <h2 className="text-2xl font-bold mb-4 text-gray-900">10. Governing Law</h2>
           <p>
             These Terms of Service are governed by and construed in accordance with the laws of North Carolina, without regard to its conflict of law principles. Any disputes relating to these terms will be subject to the exclusive jurisdiction of the courts of North Carolina.
-          </p>
-        </div>
-
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-900">11. Contact Information</h2>
-          <p className="mb-4">
-            If you have any questions about these Terms of Service, please contact us at:
-          </p>
-          <p>
-            Elon Esports<br />
-            School of Communications<br />
-            Elon University<br />
-            Email: elonesports@elon.edu
           </p>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export function PrivacyPolicyPage() {
   return (
     <div className="container mx-auto px-6 py-12 max-w-4xl">
-      <h1 className="text-3xl md:text-4xl font-bold mb-6 text-elon-maroon">Privacy Policy</h1>
+      <h1 className="text-3xl md:text-4xl font-bold mb-6 text-elon-maroon mt-12">Privacy Policy</h1>
       
       <div className="prose prose-lg max-w-none">
         <p className="text-gray-600 mb-8">
@@ -15,7 +15,7 @@ export function PrivacyPolicyPage() {
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-900">Introduction</h2>
           <p className="mb-4">
-            Elon Esports ("we," "our," or "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, participate in our events, or join our community.
+            Elon Esports (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, participate in our events, or join our community.
           </p>
           <p>
             Please read this policy carefully. If you disagree with our policies and practices, your choice is to not use our services. By accessing or using our services, you agree to this Privacy Policy.
@@ -98,22 +98,9 @@ export function PrivacyPolicyPage() {
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-900">Changes to Our Privacy Policy</h2>
           <p>
-            We may update our Privacy Policy from time to time. We will post any changes on this page and update the "Last updated" 
+            We may update our Privacy Policy from time to time. We will post any changes on this page and update the &quot;Last updated&quot; 
             date. We encourage you to review this Privacy Policy periodically to stay informed about how we collect, use, and 
             protect your information.
-          </p>
-        </div>
-
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-900">Contact Information</h2>
-          <p className="mb-4">
-            If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:
-          </p>
-          <p>
-            Elon Esports<br />
-            School of Communications<br />
-            Elon University<br />
-            Email: elonesports@elon.edu
           </p>
         </div>
       </div>

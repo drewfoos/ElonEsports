@@ -1,7 +1,6 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { HelpCircle } from "lucide-react";
 
 export function TeamsPage() {
@@ -123,7 +122,7 @@ export function TeamsPage() {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">Create a Team!</h3>
                   <p className="text-gray-600 mb-6">
-                    Want to compete in a game we don't currently support? Start your own team and join the Elon Esports family.
+                    Want to compete in a game we don&apos;t currently support? Start your own team and join the Elon Esports family.
                   </p>
                 </div>
               </Card>
@@ -139,8 +138,8 @@ export function TeamsPage() {
             Want to join a team?
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-            We're always looking for dedicated players to join our competitive rosters. 
-            No matter your skill level, there's a place for you in Elon Esports.
+            We&apos;re always looking for dedicated players to join our competitive rosters. 
+            No matter your skill level, there&apos;s a place for you in Elon Esports.
           </p>
           <div className="flex flex-wrap justify-center">
             <a 

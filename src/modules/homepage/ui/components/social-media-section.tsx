@@ -1,10 +1,8 @@
 "use client"
 
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { siInstagram, siTwitch, siX, siYoutube, siDiscord } from "simple-icons";
+import { siInstagram, siTwitch } from "simple-icons";
 import { TwitchEmbed } from "./twitch-embed";
 import { DevSafeInstagramEmbed } from "./dev-safe-instagram";
 
