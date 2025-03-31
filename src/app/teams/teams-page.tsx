@@ -67,9 +67,6 @@ export function TeamsPage() {
     <div className="bg-white min-h-screen">
       {/* Teams header section */}
       <section className="bg-elon-maroon py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat"></div>
-        </div>
         <div className="container mx-auto px-6 pt-16">
           <div className="max-w-4xl relative">
             {/* Orange accent bar specifically above "Our Teams" text */}

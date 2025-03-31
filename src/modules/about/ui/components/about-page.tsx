@@ -25,9 +25,6 @@ export function AboutPage() {
     <div className="bg-white min-h-screen">
       {/* Header section */}
       <section className="bg-elon-maroon py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat"></div>
-        </div>
         <div className="container mx-auto px-6 pt-16">
           <div className="max-w-4xl relative">
             <div className="absolute -top-8 left-0 h-1 w-24 bg-elon-gold rounded"></div>
