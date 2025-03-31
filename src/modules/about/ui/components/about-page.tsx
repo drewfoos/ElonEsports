@@ -268,8 +268,16 @@ export function AboutPage() {
                                   <span className="ml-2">Introduce yourself to everyone</span>
                                 </li>
                                 <li>
-                                  <Badge variant="outline" className="text-elon-maroon bg-white border-elon-maroon/30">#announcements</Badge>
+                                  <Badge variant="outline" className="text-elon-maroon bg-white border-elon-maroon/30">#club-announcements</Badge>
+                                  <span className="ml-2">Club announcements and events</span>
+                                </li>
+                                <li>
+                                  <Badge variant="outline" className="text-elon-maroon bg-white border-elon-maroon/30">#room-status</Badge>
                                   <span className="ml-2">Room hours and important updates</span>
+                                </li>
+                                <li>
+                                  <Badge variant="outline" className="text-elon-maroon bg-white border-elon-maroon/30">#club-info</Badge>
+                                  <span className="ml-2">Team captain contact information</span>
                                 </li>
                               </ul>
                             </CardContent>
