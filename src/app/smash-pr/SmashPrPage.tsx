@@ -83,7 +83,7 @@ export function SmashPrPage() {
     };
 
     fetchRankings();
-  }, []);
+  }, [minTournamentCount]);
 
   // Update filtered rankings when min tournament count changes
   useEffect(() => {

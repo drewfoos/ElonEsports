@@ -10,7 +10,7 @@ const uri = process.env.MONGODB_URI;
 const CACHE_DURATION = 7 * 24 * 60 * 60 * 1000; // 1 week in milliseconds
 type CacheEntry = {
   timestamp: number;
-  data: any;
+  data: unknown;
 };
 const cache = new Map<string, CacheEntry>();
 
