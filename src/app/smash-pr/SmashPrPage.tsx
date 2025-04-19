@@ -1,19 +1,14 @@
 "use client"
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import {
   Trophy,
-  Award,
-  Star,
-  Users,
   Calendar,
   Medal
 } from "lucide-react";
 import { 
   Card, 
   CardContent, 
-  CardDescription, 
   CardHeader, 
   CardTitle 
 } from "@/components/ui/card";
