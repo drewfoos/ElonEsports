@@ -1,11 +1,41 @@
 // src/app/api/smash-rankings/route.ts
 import { NextResponse } from "next/server";
 import { MongoClient, ObjectId } from "mongodb";
+import { rateLimit } from "@/lib/rate-limit";
 
 // MongoDB connection string from environment variable
 const uri = process.env.MONGODB_URI;
 
+// Cache configuration
+const CACHE_DURATION = 7 * 24 * 60 * 60 * 1000; // 1 week in milliseconds
+type CacheEntry = {
+  timestamp: number;
+  data: any;
+};
+const cache = new Map<string, CacheEntry>();
+
+// Create a rate limiter instance - 30 requests per minute
+const limiter = rateLimit({
+  interval: 60 * 1000, // 1 minute
+  uniqueTokenPerInterval: 100 // Max 100 users per minute
+});
+
 export async function GET(request: Request) {
+  // Apply rate limiting
+  try {
+    const ip = request.headers.get("x-forwarded-for") || 
+               request.headers.get("x-real-ip") || 
+               "anonymous";
+    
+    await limiter.check(NextResponse.json({}, { status: 200 }), ip, 30);
+  } catch (error) {
+    console.log("Rate limit exceeded:", error);
+    return NextResponse.json(
+      { error: "Too many requests, please try again later." },
+      { status: 429, headers: { "Retry-After": "60" } }
+    );
+  }
+
   if (!uri) {
     return NextResponse.json(
       { error: "MongoDB connection string is not defined" },
@@ -16,6 +46,19 @@ export async function GET(request: Request) {
   // Get query parameters
   const url = new URL(request.url);
   const semesterId = url.searchParams.get('semesterId');
+  const cacheKey = semesterId || 'default';
+  
+  // Check cache first
+  const cacheEntry = cache.get(cacheKey);
+  if (cacheEntry && (Date.now() - cacheEntry.timestamp) < CACHE_DURATION) {
+    // Return cached data with cache header
+    return NextResponse.json(cacheEntry.data, {
+      headers: {
+        "Cache-Control": "public, max-age=86400", // 1 day in seconds
+        "X-Cache": "HIT"
+      }
+    });
+  }
 
   const client = new MongoClient(uri);
   
@@ -111,11 +154,25 @@ export async function GET(request: Request) {
         }));
       });
     
-    // Return rankings and semester data
-    return NextResponse.json({
+    // Store response data
+    const responseData = {
       rankings,
       semesters: allSemesters,
       currentSemesterId
+    };
+    
+    // Update cache
+    cache.set(cacheKey, {
+      timestamp: Date.now(),
+      data: responseData
+    });
+    
+    // Return rankings and semester data with cache headers
+    return NextResponse.json(responseData, {
+      headers: {
+        "Cache-Control": "public, max-age=86400", // 1 day in seconds
+        "X-Cache": "MISS"
+      }
     });
   } catch (error) {
     console.error('Error fetching rankings:', error);
