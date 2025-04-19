@@ -21,6 +21,7 @@ import { Container } from "@/components/container" // Import the Container
 const navigationItems = [
   { name: "HOME", path: "/" },
   { name: "TEAMS", path: "/teams" },
+  { name: "SMASH PR", path: "/smash-pr" },
   { name: "ABOUT", path: "/about" },
 ]
 
