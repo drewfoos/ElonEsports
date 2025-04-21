@@ -7,7 +7,7 @@ import { rateLimit } from "@/lib/rate-limit";
 const uri = process.env.MONGODB_URI;
 
 // Cache configuration
-const CACHE_DURATION = 7 * 24 * 60 * 60 * 1000; // 1 week in milliseconds
+const CACHE_DURATION = 0; // 1 week in milliseconds
 type CacheEntry = {
   timestamp: number;
   data: unknown;
